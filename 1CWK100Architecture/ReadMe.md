@@ -18,28 +18,28 @@ public class GameApplication {
 The Spring Boot application scans for components (any class annotated with `@Component`) and configuration classes (any class annotated with `@Configuration`)in the same package and sub-packages of the class with the main() method.
 
 Classes annotated with `@Configuration` are used to define Beans that will be managed by the Spring Boot application. Beans are objects that are instantiated, assembled and  managed by the Spring dependency injection (DI) container.
+
 ```Java
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.replay.Provided;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.replay.UseCase;
+
 @Configuration
-public class AppConfig
-{
+public class AppConfig {
 
     @Bean
-    Required required()
-    {
+    Required required() {
         return new Technology();
     }
 
 
     @Bean
-    uk.ac.mmu.game.applicationcode.usecase.play.Provided playUseCase(Required required)
-    {
-        return new uk.ac.mmu.game.applicationcode.usecase.play.UseCase(required);
+    uk.ac.mmu.sda.architecture.applicationcode.usecase.play.Provided playUseCase(Required required) {
+        return new play.usecase.applicationcode.uk.ac.mmu.sda.architecture.UseCase(required);
     }
 
     @Bean
-    uk.ac.mmu.game.applicationcode.usecase.replay.Provided replayUseCase(Required required)
-    {
-        return new uk.ac.mmu.game.applicationcode.usecase.replay.UseCase(required);
+    Provided replayUseCase(Required required) {
+        return new replay.usecase.applicationcode.uk.ac.mmu.sda.architecture.UseCase(required);
     }
 
 }
@@ -50,7 +50,8 @@ Classes annotated with `@Component` and that implementing `org.springframework.b
 As we have more than one class implementing CommandLineRunner we also need to implement the Ordered interface to control the order in which they are run.
 
 ```Java
-import uk.ac.mmu.game.applicationcode.usecase.play.Provided;
+import play.usecase.applicationcode.uk.ac.mmu.sda.architecture.Provided;
+
 @Component
 class Play implements org.springframework.boot.CommandLineRunner, Ordered {
 
@@ -62,7 +63,7 @@ class Play implements org.springframework.boot.CommandLineRunner, Ordered {
 
 
     @Override
-    public void run(String... args)  {
+    public void run(String... args) {
         System.out.format("Played Game Id = %d%n", usecase.play());
     }
 

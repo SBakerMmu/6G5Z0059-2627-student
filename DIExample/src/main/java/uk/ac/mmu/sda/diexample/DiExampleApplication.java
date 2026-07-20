@@ -1,4 +1,4 @@
-package uk.ac.mmu.diexample;
+package uk.ac.mmu.sda.diexample;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,23 +8,20 @@ import org.springframework.context.annotation.Scope;
 public class DiExampleApplication {
 
     public static void main(String[] args) {
-
         try (ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(DiExampleApplication.class)) {
-            Basket basket = ctx.getBean(Basket.class);
-            basket.chargeCreditCard("1234-5678-9012-3456", 2028, 6);
+            CheckoutService checkoutService = ctx.getBean(CheckoutService.class);
+            checkoutService.chargeCreditCard("1234-5678-9012-3456", 2028, 6, "123");
         }
     }
 
     @Bean
     @Scope("singleton")
     AbstractCreditCardService creditCardService() {
-        return new ConcreteCreditCardService();
+        return new RealCreditCardService();
     }
 
     @Bean
-    @Scope("prototype")
-    Basket basket(AbstractCreditCardService creditCardService) {
-
-        return new Basket(creditCardService);
+    @Scope("prototype") CheckoutService checkoutService(AbstractCreditCardService creditCardService) {
+        return new CheckoutService(creditCardService);
     }
 }

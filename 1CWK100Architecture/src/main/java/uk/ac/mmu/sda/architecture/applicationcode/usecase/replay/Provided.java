@@ -1,7 +1,7 @@
-package uk.ac.mmu.game.applicationcode.usecase.replay;
+package uk.ac.mmu.sda.architecture.applicationcode.usecase.replay;
 
 
-import uk.ac.mmu.game.applicationcode.usecase.Required;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.Required;
 
 public interface Provided {
     void replay(int gameId);

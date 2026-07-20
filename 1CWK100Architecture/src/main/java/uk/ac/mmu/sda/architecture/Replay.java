@@ -1,12 +1,8 @@
-package uk.ac.mmu.game;
+package uk.ac.mmu.sda.architecture;
 
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
-import uk.ac.mmu.game.applicationcode.usecase.replay.Provided;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.replay.Provided;
 
 @Component
 class Replay implements org.springframework.boot.CommandLineRunner, Ordered {

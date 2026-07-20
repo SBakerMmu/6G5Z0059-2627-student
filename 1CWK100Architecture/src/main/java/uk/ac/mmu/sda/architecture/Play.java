@@ -1,8 +1,8 @@
-package uk.ac.mmu.game;
+package uk.ac.mmu.sda.architecture;
 
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
-import uk.ac.mmu.game.applicationcode.usecase.play.Provided;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.play.Provided;
 
 @Component
 class Play implements org.springframework.boot.CommandLineRunner, Ordered {

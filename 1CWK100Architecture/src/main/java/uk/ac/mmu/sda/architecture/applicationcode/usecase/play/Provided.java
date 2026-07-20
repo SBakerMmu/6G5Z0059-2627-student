@@ -1,6 +1,6 @@
-package uk.ac.mmu.game.applicationcode.usecase.play;
+package uk.ac.mmu.sda.architecture.applicationcode.usecase.play;
 
-import uk.ac.mmu.game.applicationcode.usecase.Required;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.Required;
 
 public interface Provided {
     int play(); //Play the game and return the id of the played game

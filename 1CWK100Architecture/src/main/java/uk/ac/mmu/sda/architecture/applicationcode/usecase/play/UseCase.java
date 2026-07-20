@@ -1,7 +1,7 @@
-package uk.ac.mmu.game.applicationcode.usecase.play;
+package uk.ac.mmu.sda.architecture.applicationcode.usecase.play;
 
 
-import uk.ac.mmu.game.applicationcode.usecase.Required;
+import uk.ac.mmu.sda.architecture.applicationcode.usecase.Required;
 
 public class UseCase implements Provided {
 
