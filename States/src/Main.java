@@ -5,7 +5,8 @@ public class Main {
         rbgstatemachinestatepattern.Example.run();
         extendedstatemachine.Example.run();
         orderstatemachine.Example.run();
-        generalstatepattern.Example.run();
+        generalstatemethod.Example.run();
+        generalstateconstructor.Example.run();
         gamestates.Example.run();
     }
 }

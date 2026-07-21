@@ -1,5 +1,5 @@
 package gamestates;
 
 public interface Context {
-  void setGameState(GameState gameState);
+    void setGameState(GameState gameState);
 }

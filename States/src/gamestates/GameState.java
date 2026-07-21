@@ -2,6 +2,7 @@ package gamestates;
 
 public interface GameState {
 
-  void turn();
-  boolean isGameOver();
+    void turn();
+
+    boolean isGameOver();
 }
