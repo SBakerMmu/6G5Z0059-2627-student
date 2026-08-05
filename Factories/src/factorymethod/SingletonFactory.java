@@ -1,10 +1,10 @@
 package factorymethod;
 
-abstract class ExpensiveObjectSingletonFactory {
+abstract class SingletonFactory implements AbstractFactory {
 
-    private AbstractExpensiveObject cachedInstance = null;
+    private AbstractObject cachedInstance = null;
 
-    public AbstractExpensiveObject create()
+    public AbstractObject create()
     {
 
         if(cachedInstance == null)
@@ -15,7 +15,5 @@ abstract class ExpensiveObjectSingletonFactory {
         return cachedInstance;
 
     }
-    protected abstract AbstractExpensiveObject doCreate();
-
-
+    protected abstract AbstractObject doCreate();
 }

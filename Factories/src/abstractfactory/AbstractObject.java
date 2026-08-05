@@ -1,0 +1,4 @@
+package abstractfactory;
+
+interface AbstractObject {
+}

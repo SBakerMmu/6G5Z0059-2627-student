@@ -5,15 +5,21 @@ public class Example {
 
     public static void run()
     {
-        ExpensiveObjectSingletonFactory factory = new ExpensiveFileObjectSingletonFactory();
+        AbstractFactory factory = new FileObjectSingletonFactory();
         showOperations(factory);
-        factory = new ExpensiveDatabaseObjectSingletonFactory();
+        factory = new DatabaseObjectSingletonFactory();
+        showOperations(factory);
+        factory = new FileObjectTTLFactory();
+        showOperations(factory);
+        factory = new DatabaseObjectTTLFactory();
         showOperations(factory);
     }
 
-    private static void showOperations(ExpensiveObjectSingletonFactory factory) {
-        AbstractExpensiveObject expensiveObject = factory.create();
+
+    private static void showOperations(AbstractFactory factory) {
+        AbstractObject expensiveObject = factory.create();
         System.out.format("%s%n", expensiveObject);
-
     }
+
+
 }

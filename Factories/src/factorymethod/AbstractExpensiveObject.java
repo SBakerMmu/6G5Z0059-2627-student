@@ -1,5 +1,0 @@
-package factorymethod;
-
-interface AbstractExpensiveObject {
-
-}
