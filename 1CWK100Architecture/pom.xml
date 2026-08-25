@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.1.0</version>
+		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>uk.ac.mmu.sda</groupId>
 	<artifactId>achitecture</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>1CWK100Architecture</name>
-	<description>Starter project for Spring Boot</description>
+	<description>Starter project for 1CWK100</description>
 	<url/>
 	<licenses>
 		<license/>
