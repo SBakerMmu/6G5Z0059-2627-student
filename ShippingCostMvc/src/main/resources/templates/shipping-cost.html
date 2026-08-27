@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipping Cost Calculator</title>
+</head>
+<body>
+<h1>Shipping Cost Calculator</h1>
+<form method="post" th:action="@{/}">
+    <label for="countryCode">Destination country</label>
+    <select id="countryCode" name="countryCode" required>
+        <option th:each="country : ${countries}" th:text="|${country.name} (${country.code})|" th:value="${country.code}"></option>
+    </select>
+
+    <label for="weight">Package weight (kg)</label>
+    <input id="weight" min="0.01" name="weight" required step="0.01" type="number">
+
+    <button type="submit">Calculate</button>
+</form>
+
+<p th:if="${shippingCost}" th:text="|Shipping cost of ${shippingCost.weight}kg to ${shippingCost.name} (${shippingCost.code}) in region ${shippingCost.region}: ${shippingCost.cost}|"></p>
+<p th:if="${error}" th:text="${error}"></p>
+</body>
+</html>
