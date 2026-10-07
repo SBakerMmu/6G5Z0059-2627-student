@@ -6,7 +6,7 @@ Completing the labs will get you ready for writing the assignment code.
 
 **Advanced** Labs are optional, but completing the Advanced Labs will introduce you to more advanced techniques and improve your design skills.
 
-# Setting up your Development Environment
+# Lab 01 - Setting up your Development Environment
 
 This lab is all about getting your development environment set up for the rest of the module and preparing to write your assignment code.
 
@@ -132,7 +132,7 @@ Pull the changes down to your local machine using GitHub Desktop.
 
 Now delete the local `sda` folder and clone it again using GitHub Desktop to ensure you can pull the code down again.
 
-# Learning Git, GitHub and GitHub Desktop (Advanced)
+## Learning Git, GitHub and GitHub Desktop (Advanced)
 
 > ☑ Being proficient in Git and GitHub is an essential skill for software developers. You will need to learn how to use Git and GitHub effectively to manage your code throughout this module and in your future modules.
 
@@ -152,7 +152,7 @@ The key features you need to learn for doing individual work are
 - Pulling changes from GitHub
 
 
-# Implement a Coding Standard
+## Implement a Coding Standard
 
 > ☑ A coding standard is a set of rules about code style and naming. Having a consistent coding style makes your code easier to understand and navigate, both for yourself and for others.
 >
@@ -192,7 +192,7 @@ class badStyleClass {
 
 ```
 
-# Learn Markdown
+## Learn Markdown
 
 > ☑ Writing documents in Markdown has become common in software projects because it offers just enough formatting to be useful but requires almost no overhead to write. Markdown files are just text files, so they work well with source code and development tools like Git.
 
@@ -301,7 +301,7 @@ Produces this output
 
 ---
 
-## A code example
+### A code example
 
 ```java
 public class Main {
@@ -311,8 +311,9 @@ public class Main {
 }
 ```
 
+# Lab 02 - Java Recap, well-formed Java classes.
 
-# Name the parts of a class correctly
+## Name the parts of a class correctly
 
 Name the parts of this class using the lecture notes, Google style guide and your own research.
 
@@ -367,7 +368,7 @@ public abstract class Student {
 }
 ```
 
-# Creating a simple Java project in IntelliJ for the labs
+## Creating a simple Java project in IntelliJ for the labs
 IntelliJ has a quick and straightforward way of creating a new Java project that we can use for many of the labs.
 
 `IntelliJ File menu → New > Project…`
@@ -403,7 +404,7 @@ You can either:
 > If you are using Git, it is recommended that create your git repository in a folder containing all your projects so that you do not need to keep creating multiple git repositories. This is how the Student repository is set up for this module - one repository holding multiple projects.
 
 
-# Implementing equals(), toString(), and hashCode()
+## Implementing equals(), toString(), and hashCode()
 
 If you implement a class in Java, it is often useful to implement the equals(), toString(), and hashCode() methods for that class. For classes that you want to compare for equality, or use as keys in hash-based collections (like HashMap), you must implement equals() and hashCode() correctly to ensure that your class behaves as expected.
 
@@ -450,7 +451,7 @@ Implement your chosen approach and justify your choice in comments in the code.
 
 The teaching point here is that what constitutes equality depends on the context of the class and how it is to be used.
 
-## Testing your implementation
+### Testing your implementation
 
 You can write your test code in the static main method in the code generated for you by IntelliJ.
 
@@ -506,7 +507,7 @@ anotherDoubleOne hashcode 1985
 
 > ⚠ If you know how to use a test framework, you might also use JUnit to write more formal unit tests for your classes. In IntelliJ, you can right-click on the class name and select "Generate" > "Test..." to create a test class automatically.
 
-## Hints and Tips
+### Hints and Tips
 
 Recall that Java has primitive and reference types.
 
@@ -537,7 +538,7 @@ Hash codes are not necessarily unique, but a good `hashCode()` method distribute
 
 > ☑ We strongly advise you use static int hash(Object... values) method of java.util.Objects to generate suitable hash values when there is more than one field involved in the equals. This is surprisingly hard to do well yourself.
 
-# Making a Class Comparable (Advanced)
+## Making a Class Comparable (Advanced)
 > ☑ Implementing the Comparable interface allows objects of your class to be compared to each other, which is useful for sorting and ordering.
 
 For your DiceRoll and TwoDiceRoll class, implement the Comparable<T> interface so that DiceRoll objects can be compared based on their value.
@@ -589,7 +590,7 @@ TwoDiceRoll DiceRoll 1 DiceRoll 1 with value 2
 TwoDiceRoll DiceRoll 1 DiceRoll 6 with value 7
 TwoDiceRoll DiceRoll 6 DiceRoll 6 with value 12
 ```
-## Hints and Tips
+### Hints and Tips
 
 The `Comparable<T>` interface defines a natural ordering for objects so they can be sorted, compared, and used in ordered collections. A class implements `Comparable<T>` and overrides `compareTo(T other)`.
 
