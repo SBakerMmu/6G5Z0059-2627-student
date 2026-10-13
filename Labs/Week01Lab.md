@@ -596,11 +596,11 @@ The `Comparable<T>` interface defines a natural ordering for objects so they can
 
 Lists (and arrays) of objects that implement this interface can be sorted automatically by `Collections.sort` (and `Arrays.sort`). Objects that implement this interface can be used as keys in a sorted map or as elements in a sorted set.
 
-The `compareTo(T other)` method returns:
+The implementation of `compareTo(T other)` must return a negative integer, zero, or a positive integer if this object is less than, equal to, or greater than the other object, i.e.
 
-- -1: this < other
-- zero: this equals other
-= +1: this > other
+- this < other:  return -1 
+- this equals other: return 0
+- this > other: return +1
 
 The `compareTo` method must be consistent with `equals()`: if `compareTo` returns zero for two objects, then `equals()` must return true for those objects.
 
