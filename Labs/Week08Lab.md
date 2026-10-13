@@ -1,6 +1,8 @@
 ﻿# Software Design and Architecture Week08 Lab Worksheet
 
-# Use the Spring Framework to implement Dependency Injection (DI)
+# Lab 01
+
+## Use the Spring Framework to implement Dependency Injection (DI)
 
 In examples of Dependency Injection so far, we have manually constructed the objects and passed them into the constructors of the classes that need them. For example a `CheckoutService` class requires a concrete implementation of the `AbstractCreditCardService` interface to be passed into its constructor.
 
@@ -147,7 +149,7 @@ Create another class called Runner02 in the same package using the same code as 
 
 Swap the Precedence values in the two Runner classes and run the application again. You should see that the order of the messages has changed.
 
-## Explanation of how this works
+### Explanation of how this works
 
 1. The normal program entry point `main()` starts the Spring Boot application.
 2. The `@SpringBootApplication` annotation placed on the class containing the entry point method implicitly defines a base “search package”.
@@ -462,6 +464,8 @@ The `@Primary` annotation indicates to the DI Container that this Bean should be
 
 The `@Qualifier("beanName")` annotation specifies the name of the Bean that should be used for injection.
 
+# Lab 02
+
 ## Convert the OrderWithDip Lab to use the Spring DI container
 
 A previous lab asked you to refactor the OrderWithoutDip class into a new class called OrderWithDip making use of the Dependency Inversion Principle.
@@ -472,7 +476,7 @@ Create another runner that is takes a dependency on the interface you created an
 
 You will need to copy over the code from the previous lab into this new Spring Boot application and add additional `@Bean` configuration.
 
-## Summary
+### Summary
 
 In this lab we have set up a basic Spring Boot application that uses Dependency Injection to manage object dependencies and illustrated 3 use cases for the Spring Dependency Injection container.
 

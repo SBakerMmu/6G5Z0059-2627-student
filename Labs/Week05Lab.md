@@ -1,4 +1,4 @@
-# Software Design and Architecture Week05 Worksheet
+## Software Design and Architecture Week05 Worksheet
 
 There are multiple activities each week, and you will probably not get everything done in the timetabled lab sessions; therefore, it is highly recommended that you complete the labs in your own time each week to avoid falling behind.
 
@@ -7,8 +7,9 @@ Completing the labs will get you ready for writing the assignment code.
 **Advanced** Labs are optional, but completing the Advanced Labs will introduce you to more advanced techniques and improve your design skills.
 
 Week 5 Labs show how to add functionality to **closed** classes using Decorators and Observers. See the lecture notes and textbook for discussion of what "open for extension but closed for modification" means.
+# Lab 01
 
-# Use Decorators to implement different Dice Shakers
+## Use Decorators to implement different Dice Shakers
 
 Create a new Java project using:
 
@@ -89,7 +90,7 @@ Writing the code to output to the screen is repetitive. Write an additional deco
 System.out.format("%d%n", shaker.shake());
 ```
 
-## Hints and Tips
+### Hints and Tips
 
 The **Decorator** pattern allows you to "decorate" a class with additional features, creating a customized version without modifying the original code.
 
@@ -154,8 +155,9 @@ Component component = new ConcreteComponent();
 component  = new ConcreteDecorator(component);
 component.operation();
 ```
+# Lab 02
 
-# Use Observers to observe Game Events
+## Use Observers to observe Game Events
 A simple game board has the following positions
 
 ```Text
@@ -317,7 +319,7 @@ OverflowEvent{advance 9 oldPosition=5, newPosition=2}
 
 Once you have that working, create a HomeEvent event that is passed to observers whenever the game position returns to exactly the HOME position (i.e. when the game lands on the HOME position = 1).
 
-## Hints and Tips
+### Hints and Tips
 
 When applying the Observer pattern, we are in effect allowing the class to describe significant events that have occurred to it. We have an extensible mechanism whereby other code can subscribe to and execute their own logic in response to these events. The class and the Observers that handle the event are decoupled. The Observers know about the class, but the class doesn't know about the Observers. Furthermore, the number and behavior of event handlers can be varied at runtime by attaching (subscribing) different Observers to an object.
 
@@ -360,7 +362,7 @@ class Observable  {
 ```
 > ☑ The Observer pattern is very common in GUI frameworks. The Observable object might be something like a Button. When a user clicks the Button it coverts the mouse actions into events, say OnButtonDown and OnButtonUp. The Button implements the Observer pattern. Observers (which might be called **Event Handlers**, **Event Listeners** or **Callbacks**) register themselves with the Button instance and are notified of all the Button Events. This way the GUI Framework can exist without any knowledge of how your program will react to these Button events. A very good illustration of being closed for modification but open for extension.
 
-# Do and Undo using Commands (Advanced)
+## Do and Undo using Commands (Advanced)
 
 The supporting material for this lab is the **Undoing operations using Commands** chapter of the online textbook
 
@@ -380,7 +382,7 @@ Undo, current position = 1.
 
 ```
 
-## Hints and Tips
+### Hints and Tips
 
 We have categorized operations as being either **Commands** (an operation which changes the state of the object) or **Queries** (an operation that returns a value but does not change the object).
 

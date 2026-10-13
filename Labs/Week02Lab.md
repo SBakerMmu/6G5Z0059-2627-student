@@ -4,7 +4,9 @@ Week 2 labs are about some key object-oriented techniques – interface implemen
 
 If you complete the labs, use the time to work on your assignment code and get formative feedback from the tutors.
 
-# Implement an Interface
+# Lab 01
+
+## Implement an Interface
 IntelliJ has a quick and simple way of creating a new Java project that we can use for many of the labs.
 Intelli-J File menu -> `New > Project…`
 
@@ -37,7 +39,7 @@ public interface DiceShaker {
 }
 ```
 
-### Create an implementation that shakes a single die.
+#### Create an implementation that shakes a single die.
 ```java
 public class RandomSingleDiceShaker implements DiceShaker {
 
@@ -59,7 +61,7 @@ public static void main(String[] args)
 }
 ```
 
-## Create an implementation of the DiceShaker interface that shakes 2 dice.
+### Create an implementation of the DiceShaker interface that shakes 2 dice.
 
 In the code example above, we are simulating a single roll of a six-sided die.
 Create another class that simulates rolling two six-sided die.
@@ -69,7 +71,7 @@ Create another class that simulates rolling two six-sided die.
 Write some code to switch between the two implementations based on some user input into the main() method.
 > ⚠ The Scanner class in the java.util is often used as a simple way of scanning user input from the keyboard
 
-## Create an implementation of the DiceShaker interface that delivers a fixed set of shakes.
+### Create an implementation of the DiceShaker interface that delivers a fixed set of shakes.
 
 For the assignment code you will find it useful to implement a version of a DiceShaker that returns a fixed set of “shakes”.
 
@@ -127,11 +129,11 @@ while (shaker.hasNext()) {
   int shake = shaker.next();
 }
 ```
-# Implement a DiceShaker using Abstract Classes and Abstract Methods
+## Implement a DiceShaker using Abstract Classes and Abstract Methods
 
 We can use an `abstract` base class as the abstract type, and provide different concrete implementations using inheritance (subclassing).
 
-## Create an abstract superclass.
+### Create an abstract superclass.
 ```java
 public abstract class AbstractDiceShaker {
 
@@ -146,7 +148,7 @@ public abstract class AbstractDiceShaker {
 
 }
 ```
-## Create concrete implementations for 1 and 2 die (as before).
+### Create concrete implementations for 1 and 2 die (as before).
 ```java
 public class ConcreteSingleDiceShaker extends AbstractDiceShaker {
   @Override
@@ -184,7 +186,7 @@ Now implement a version that provides a fixed set of ‘shakes’.
 Which one would you choose?
 
 
-## Hints and Tips
+### Hints and Tips
 
 An **abstract** class is a class that is incomplete (abstract means it is lacking one or more fields, or implementation of one or more methods) and requires a subclass to extend the abstract class to implement the missing methods.
 
@@ -206,7 +208,7 @@ Interfaces are key to writing extensible and flexible code because:
 
 - the choice of which concrete type supplies the interface implementation can be made at runtime, allowing us to vary behavior based on some runtime condition (such as user input, choice of operating system, production or test mode...)
 
-# Implement Inherited Interfaces
+## Implement Inherited Interfaces
 Interfaces can be inherited. For example:
 ```java
 interface InterfaceA {
@@ -236,7 +238,7 @@ Write an implementation class that implements BOTH `MyInterface` and `MyOtherInt
 
 **Question: Why would you use interface inheritance and why might you write a class that implements multiple interfaces ?**
 
-## Hints and Tips
+### Hints and Tips
 
 Use Intelli-J features to create the boilerplate code for you.
 
@@ -252,7 +254,7 @@ See https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Forma
 
 > ☑ Having a good knowledge of string formatting in Java saves a lot of time when creating complex strings.
 
-# Create a version of a Fixed diceShaker that implements the `Iterable<Integer>` interface (Advanced)
+## Create a version of a Fixed diceShaker that implements the `Iterable<Integer>` interface (Advanced)
 
 The interface we defined for DiceShaking
 ```Java
@@ -281,12 +283,14 @@ Then write a class that implements Iterable<Integer> that uses your Iterator<Int
 
 Create a console application example that demonstrates your implementation by using an enhanced for-loop to iterate over the fixed set of dice shakes.
 
-# Create a Package
+# Lab 02
+
+## Create a Package
 > ☑ Code written for the assignment should be written using packages and make proper use of the private, protected and public access declarations.
 
 Use the Intelli-J File menu → New → Project… to create a new sample project with a main method as before
 
-## Create a new Package
+### Create a new Package
 
 In the src directory, create a new package. Call it `mypackage`
 
@@ -344,7 +348,7 @@ public class Main {
 
 Now add the package import access control declarations (public or private) to the Product class to make this code work. The declarations should provide the minimum amount of accessibility necessary to make the client code in the main() method work.
 
-## Hints and Tips
+### Hints and Tips
 
 When you create a class in Java you want to hide as much of its
 implementation as possible. This is so that we can change the
@@ -387,7 +391,7 @@ constructors. The table shows if a member or constructor is accessible.
 
 Experiment with the different access specifiers to understand their effects. The IDE or compiler will give you feedback on if a member or constructor is accessible.
 
-# Encapsulation and Information Hiding
+## Encapsulation and Information Hiding
 
 Most discussions about object orientation talk about **encapsulation**.
 
@@ -400,7 +404,7 @@ In Java, the concept of encapsulation scales up to the package. The public API o
 Encapsulation is one form of **information hiding** - a general principle in software engineering of creating any API (application programming interface) that hides design decisions and reveals as little as possible of the inner workings. Hiding implementation information in general allows us to work with something without having to know about all its internal details, and it should be possible to refactor (change for the better) the implementation without a need for the client code to change. Hiding implementation details behind an interface is one of the fundamental ideas of software engineering that helps us cope with complexity and change.
 
 
-# Experiment with Typed References (Advanced)
+## Experiment with Typed References (Advanced)
 
 > ☑ This lab exercise is intended to test your understanding how Java interfaces and abstract classes work  - important because these are the language mechanics we need for writing flexible, extensible and maintainable code - one of the main goals of software design and software engineering.
 
@@ -462,7 +466,7 @@ e.interfaceMethodA(); //Hello from D.interfaceMethodA
 e.methodA(); //Hello from E.methodA
 e.methodB(); //Hello from E.methodB
 ```
-## Hints and Tips
+### Hints and Tips
 We have seen that when we are writing a Java class, methods can be either abstract (without an implementation) or concrete (with an implementation). If we are writing a Java interface, all its methods are abstract.
 
 We can discuss design in terms of **operations**, without having to specify if the operation is abstract or concrete.
@@ -494,7 +498,7 @@ In Java all reference types are subtypes of Object. This is why you can assign a
 
 > ☑ Understanding how Java interfaces and abstract classes work is important because these are the language mechanics we need for writing flexible, extensible and maintainable code - one of the main goals of software design and software engineering.
 
-# Understand Command Operations and Query Operations (Advanced)
+## Understand Command Operations and Query Operations (Advanced)
 
 Operations can be **commands** (an operation which changes the values of one or more instance variables, the state of the object) or **queries** (an operation that returns a value but does not change the state of an object).
 
@@ -505,5 +509,3 @@ In Java is there is no language mechanism to say if an operation is a command or
 ⚠ Be aware that you could call the same query twice in different parts of the program and there is no guarantee it would get the same value returned, because a command (a state changing operation) could have been requested between the two query operations.
 
 ☑ Where possible write your code so that operations that return values are **queries** and all **command** (state altering) operations are written as void methods. If you do write a command (state altering method) that returns a value, ensure you document that it is state altering.
-
-

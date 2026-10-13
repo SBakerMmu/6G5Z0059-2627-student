@@ -6,7 +6,9 @@ Completing the labs will get you ready for writing the assignment code.
 
 **Advanced** Labs are optional, but completing the Advanced Labs will introduce you to more advanced techniques and improve your design skills.
 
-## Hint: Starting a new Project
+# Lab 01
+
+### Hint: Starting a new Project
 
 IntelliJ has a quick and simple way of creating a new Java project that we can use for many of the labs.
 
@@ -15,7 +17,7 @@ Intelli-J File menu -\> New \> Project…
 Provide a project name, chose a location and ensure that you have ticked the **Add sample code** box.
 
 
-# Create Singletons representing Colors
+## Create Singletons representing Colors
 
 In the game application we have a concept of a Color. The colors we need are fixed and immutable, so they make good candidates for Singletons so we do not want to create new instance every time we play a game.
 
@@ -73,7 +75,7 @@ The escape sequences you require are
 | yellow | `\u001B[33m`             |
 
 
-# Create Singleton Game Boards
+## Create Singleton Game Boards
 
 Another example of a Value Object is a `Position` class which represents a position on the game board.
 
@@ -186,10 +188,9 @@ public class LargeBoard extends Board {
 }
 ```
 
-
 **Question**: Why is it important that any Singletons are final and immutable?
 
-## Hints and Tips
+### Hints and Tips
 
 See the lecture notes and module textbook for a discussion of patterns for creating objects.
 
@@ -197,7 +198,9 @@ Singletons are intended to be single primitive value or single immutable object 
 
 In Java static fields can be used to hold constant primitive values or a single instance of an immutable class. If the value is constant, we use the CONSTANT_NAME naming convention.
 
-# Write a Game Factory using the Abstract Factory pattern.
+# Lab 02
+
+## Write a Game Factory using the Abstract Factory pattern.
 
 In the game we need to create either a SmallBoard with 2 players, or a LargeBoard with 4 players. This is a good application for the **Abstract Factory** pattern to create the matching board and players.
 
@@ -240,7 +243,7 @@ public interface AbstractGameFactory {
 
 Your implementation should use as many Singletons as possible, so that no matter how many games are created, we create the minimum number of new objects. Depending on the concrete GameFactory implementation the factory should provide the correct board and players.
 
-# Write a Game Factory using the Factory Method pattern
+## Write a Game Factory using the Factory Method pattern
 
 Another common creation pattern is the **Factory Method** pattern. The Factory Method creates objects in a superclass but allows subclasses to alter the type of objects that will be created. It is slightly more complex than the Abstract Factory pattern, but a bit more flexible because it can run code before and after the concrete class is created.
 
@@ -249,7 +252,7 @@ Read the **Factory Method Pattern** section in the module textbook and re-implem
 Having implemented Game factories using both the Abstract Factory and Factory Method patterns, which do you prefer and why would you use one over the other?
 
 
-## Hints and Tips
+### Hints and Tips
 
 The general form of the **Factory Method** pattern.
 
@@ -335,7 +338,7 @@ classDiagram
 **Question**: What are the differences between the Abstract Factory and Factory Method patterns. When would you use one over the other?
 
 
-# Using the Abstract Factory Pattern to create different Iterators (Advanced)
+## Using the Abstract Factory Pattern to create different Iterators (Advanced)
 
 We previously introduced the Java Iterable and Iterator Interfaces as a standard way of providing an iterator for a collection. The Iterable interface has a single method `iterator()` that returns an Iterator, and the Iterator interface has methods `hasNext()` and `next()` to access the elements of the collection sequentially without exposing its underlying representation.
 

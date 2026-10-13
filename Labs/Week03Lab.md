@@ -14,7 +14,9 @@ Intelli-J File menu -\> New \> Project…
 
 Provide a project name, chose a location and ensure that you have ticked the **Add sample code** box.
 
-# Evaluate the design of the Polymorphic selling price product
+# Lab 01
+
+## Evaluate the design of the Polymorphic selling price product
 
 Take a copy of the polymorphic selling price product from the `ValueObject` project from the Student code (you will need to get the code from the module GitHub repository if you do not have it already). Run the program to ensure it compiles and runs.
 
@@ -49,7 +51,7 @@ class Product {
 }
 ```
 
-# Add a Shipping Charge Value Object
+## Add a Shipping Charge Value Object
 
 Shopping websites usually calculate a shipping charge.
 
@@ -87,7 +89,7 @@ class Product {
 
 Extend the example code to show the ShippingCost for the product and the total cost (the Selling Price + Shipping Cost). How will you handle the addition of a Selling Price and a Shipping Cost and the return of the total cost?
 
-## Hints and Tips
+### Hints and Tips
 
 > ☑ Most code you have written will use primitive types (strings, doubles and integers for example) to hold values. It is much better to work with dedicated classes that represent the values in your software design which encapsulate one or more primitive values. Although it is a bit more work to start with, every time you use an instance of your class rather than a primitive, you will see a benefit.
 
@@ -171,8 +173,9 @@ public final class ValueObject {
 >
 >Professional developers make use all the code generation and refactoring tools provided by an IDE to save writing boilerplate code and improve productivity.
 
+# Lab 02
 
-# Implement a Strategy Pattern for Calculating Shipping Costs
+## Implement a Strategy Pattern for Calculating Shipping Costs
 
 ![Shipping Page](images/week03_checkout2.png)
 
@@ -308,7 +311,7 @@ System.out.format("Shipping %f%n", basket.getShippingCharge());
 
 The lab task is to replace the Destination enum parameter with a Strategy Pattern, with 3 concrete strategies representing UK Shipping, Europe Shipping and Rest of World Shipping.
 
-## Hints and Tips
+### Hints and Tips
 
 The shipping cost calculation in the original code is an example of an algorithm. Algorithm is the term given to any sequence of steps to solve a problem, make a decision or calculate a value.
 
@@ -358,7 +361,7 @@ interface ShippingCostStrategy {
 Once you have this working, convert your solution to use the ShippingCost Value Object you produced in the first exercise (replacing the double primitive type with a Value Object).
 
 
-# Using a Strategy Pattern to select which player has a turn in a board game (Advanced)
+## Using a Strategy Pattern to select which player has a turn in a board game (Advanced)
 
 If we are playing board game with more than one player, we need to determine which player has the next turn. Here are some examples of strategy that returns the next player.
 
@@ -393,7 +396,7 @@ Design an interface called PlayerSelector that has a method that returns the nex
 
 Write a client class that uses your different PlayerSelector strategies to determine which player has the next turn in a game.
 
-# Implement the Bridge Pattern (Advanced)
+## Implement the Bridge Pattern (Advanced)
 
 The **More Ways of Handling Variation** chapter of the module textbook introduces the **Bridge** pattern.
 

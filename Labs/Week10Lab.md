@@ -1,13 +1,15 @@
 ﻿# Software Design and Architecture Week10 Worksheet
 
-# Implement a Clean architecture in Spring
+# Lab 01
+
+## Implement a Clean architecture in Spring
 
 This lab will set up a basic Spring Boot application that uses Dependency Injection to manage a Clean architecture.
 
 > ⚠ This lab assumes you have completed the Spring Framework and Dependency Injection (DI) labs in previous weeks and are familiar with creating and running Spring Boot applications in IntelliJ.
 > If you have not done so, please complete those labs first.
 
-## Set up a Spring Boot Application
+### Set up a Spring Boot Application
 
 We are going to create a simple Spring Boot application using the **Spring Initializr** web tool.
 
@@ -77,7 +79,7 @@ class Runner01 implements org.springframework.boot.CommandLineRunner, org.spring
 ```
 You should see the message `Hello from class uk.ac.mmu.sda.lab10.Runner01` appear in the console when you run the application.
 
-## Creating a Shipping Cost Calculator application in Spring Boot
+### Creating a Shipping Cost Calculator application in Spring Boot
 
 Copy the `applicationcode` and `infrastructure` packages from the **ShippingCostCleanArchitecture** project in Student code repository to the `uk.ac.mmu.sda.lab10` package in your Spring Boot project.
 
@@ -203,14 +205,14 @@ class DatabaseInitializer implements org.springframework.boot.CommandLineRunner,
 ```
 
 
-# Use package-specific configuration classes (Advanced)
+## Use package-specific configuration classes (Advanced)
 
 You will notice that the same interfaces names `Provided` and `Required` are used across the different use cases in the applicationcode.usecase packages.
 Writing the Spring `@Configuration` class will therefore require fully qualified names to distinguish between the different interfaces.
 
 Another way to handle this is to create a separate `@Configuration` class in each package that requires configuration, i.e. one per use case and one for the infrastructure package.
 
-## Finding @Configuration classes via Component Scanning
+### Finding @Configuration classes via Component Scanning
 The application is annotated with `@SpringBootApplication` which is a *meta-annotation* that includes `@Configuration`, `@EnableAutoConfiguration` and `@ComponentScan`.
 
 ```Java
@@ -274,9 +276,11 @@ There are no right or wrong answers to these questions, there are pros and cons 
 
 The questions will be discussed in the lab solutions document.
 
-# Create a version of the Calculate Shipping Use Case using the Request-Response Model pattern
+# Lab 01
 
-> ⚠ This lab assumes you have completed the first part of this lab
+## Create a version of the Calculate Shipping Use Case using the Request-Response Model pattern
+
+> ⚠ This lab assumes you have completed Lab 01
 
 The task is to create a new use case based on the `Provided` interface for the `calculateshipping` use case using the Request-Response Model pattern.
 The existing interface as defined:
@@ -393,7 +397,7 @@ Like request objects, response objects are immutable and contain only data speci
 
 **Question**  What are the advantages and disadvantages of the Request-Response Model pattern compared to using multiple parameters on a Use Case interfaces ?
 
-# Convert the Request-Response classes to Java Records (Advanced)
+## Convert the Request-Response classes to Java Records (Advanced)
 
 A request or response class is a kind of **Data Transfer Object (DTO)** - classes that contain only immutable data and have no behavior.
 
@@ -403,7 +407,7 @@ Java record classes support validation, so you can add validation logic to ensur
 
 Convert the `Request` and `Response` classes to Java Records using the documentation on [Java Records](https://docs.oracle.com/en/java/javase/17/language/records.html).
 
-# Wrap a logging Decorator around the Request-Response version of the shipping cost calculation Use Case (Advanced)
+## Wrap a logging Decorator around the Request-Response version of the shipping cost calculation Use Case (Advanced)
 
 The request-response version of a use case works well with the decorator pattern because there is a standard method signature for the use case interface. Adding additional properties to the request and response objects does not change the method signature.
 

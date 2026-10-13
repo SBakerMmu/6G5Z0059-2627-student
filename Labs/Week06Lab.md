@@ -4,7 +4,9 @@ Week 6 Labs show how to work with multiple classes using Facades and Mediators.
 
 There are multiple activities each week - you will probably not get everything done in the timetabled lab sessions; therefore, it is highly recommended that you start on the lab work ahead of time and use the timetabled sessions for support. Compete the labs in your own time each week to avoid falling behind.
 
-# Create a Stateless Façade to implement a Dice Game
+# Lab 01
+
+## Create a Stateless Façade to implement a Dice Game
 
 Create a new Java project using:
 
@@ -102,7 +104,7 @@ The `play()` method should return the number of moves it took to win.
 
 The lab task is to write a **stateless** façade that implements the StatelessFacade interface.
 
-# Create a Stateful Façade to implement a Dice Game
+## Create a Stateful Façade to implement a Dice Game
 
 We could define a different interface that separates out the **command** and **query** operations.
 
@@ -118,7 +120,7 @@ The `getMoves()` method is a query returns the number of moves it took to win. A
 
 Write a **stateful** façade that implements the StatefulFacade interface.
 
-## Prompt Questions
+### Prompt Questions
 
 Some prompt questions for you to think about
 
@@ -128,13 +130,15 @@ Q) Which class is responsible for counting the number of moves
 
 Q) What behavior would you expect if you call the play() method twice on the same façade instance?
 
-## Hints and Tips
+### Hints and Tips
 
 As a Façade is a normal class, it can hold state in private fields (instance variables) and use these fields to hold information about past calls or which modifies the behavior of future calls. If it holds information in private fields it is **stateful**… it holds **state**. With a stateful façade the order that methods are called may be significant, which could mean that the client has to have knowledge about how to use the façade.
 
 Stateless facades do not hold any state in private fields and as such any method can be called at any time and in any order. We might describe as Stateless facades as being a **Service**.
 
-# The Mediator Pattern
+# Lab 02
+
+## The Mediator Pattern
 
 The Façade Pattern is a way of getting classes to collaborate without them knowing about each other. In the Façade example above, the Game and the DiceShaker are independent classes which have no knowledge of each other. The Façade brings them together and handles the communication between them to achieve some goal (In the previous lab this was to play a simple dice rolling game).
 
@@ -251,7 +255,7 @@ ConcreteColleague1 notified Hello from 2
 
 Using the pattern, rather than Colleague1 interacting directly with Colleague2, the interactions are mediated by the Mediator. The Mediator could contain logic to decide what to do with the messages it receives and which colleagues to notify.
 
-## Write a Mediator which mediates between an Ecommerce basket and a Discount algorithm.
+### Write a Mediator which mediates between an Ecommerce basket and a Discount algorithm.
 
 For the lab exercise, write a Mediator which mediates between an Ecommerce basket and a Discount algorithm.
 

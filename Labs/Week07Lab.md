@@ -1,6 +1,8 @@
 # Software Design and Architecture Week07 Worksheet
 
-# Using the State Pattern to manage Authentication status.
+# Lab 01 
+
+## Using the State Pattern to manage Authentication status.
 
 Many websites and apps work in two modes, an unauthenticated mode (user is logged out) and an authenticated mode (user is logged in).
 
@@ -8,7 +10,7 @@ For example, many ecommerce websites allow browsing and shopping (adding product
 
 In this lab we will implement a simple Authentication context that keeps track of the authentication state using the State pattern.
 
-## Handling Login and Logout using the State Pattern
+### Handling Login and Logout using the State Pattern
 
 The first part of the lab is to build a simple context class that handles login and logout. The state transition table is trivial, and for this part of the lab we won’t take any actions on the state transition.
 
@@ -173,7 +175,7 @@ Logged Out -> Logged Out
 User is Logged Out
 ```
 
-## Hints and Tips
+### Hints and Tips
 
 A common requirement in software design is to represent things that have a lifecycle, and for an object's state to vary over time. It is a very useful design technique to model the sequence of states as a State Machine. We are using the State pattern to code up a State Machine.
 
@@ -313,7 +315,7 @@ Another ways of modelling a State Machine is a State Transition Table. There are
 
 The State Transition Table tells us what the concrete States are (the set of States listed in the Current and Next State columns become concrete State classes) and the triggering events become methods on the abstract State interface.
 
-## Implement Auto Logout using the State Pattern
+### Implement Auto Logout using the State Pattern
 
 Some websites (banking applications for example) automatically log the user out after some time period as a security measure. We can simulate this by adding a tick() method to the AuthenticationContext which is called on a regular basis.
 
@@ -383,7 +385,7 @@ Logged Out -> Logged Out
 User is Logged Out
 ```
 
-## Implement Auto Logout with Reset using the State Pattern
+### Implement Auto Logout with Reset using the State Pattern
 
 As a final enhancement, extend the state machine so that a Login trigger when in the Login state resets the tick counter, so that additional time is granted if the user re-authenticates. This reset is shown as an action on the Login trigger from the LoggedIn state (the LoggedIn state is both the source and target State in this case).
 
@@ -481,7 +483,7 @@ Logged Out -> Logged Out
 User is Logged Out
 ```
 
-## Use Nested Classes to encapsulate the  State machine within the Context
+### Use Nested Classes to encapsulate the  State machine within the Context
 
 The State pattern can be implemented using **nested classes**, with the State interface and concrete State classes declared as private interfaces and classes within the ConcreteContext class.
 
@@ -492,7 +494,7 @@ Reimplement the AuthenticationContext class using nested classes to encapsulate 
 What are the advantages and disadvantages of this design ?
 
 
-# Implement the Order Processing State Machine
+## Implement the Order Processing State Machine
 
 The small state machine we have implemented so far is a simple example to illustrate the State pattern, but real-world state machines can be much more complex which makes the State pattern much more useful as a design technique to manage the complexity.
 
@@ -514,7 +516,7 @@ stateDiagram-v2
 
 
 ```
-# Summary
+## Summary
 
 State machines are one of the most powerful software design techniques for certain types of problems. They replace complex multi-part conditional statements with a class-per-state design that is easier to understand, maintain and extend. They are especially useful for systems with well-defined states, such as protocols, workflows, and user interfaces.
 
@@ -522,7 +524,9 @@ The addition of guard conditions make state transitions conditional, and actions
 
 The full UML model for state machines includes entry and exit actions on states, and hierarchical states (states within states) which we have not covered here but extend the capabilities of state machines even further. Open source libraries implementing state machines are available for many programming languages, but writing your own implementation using the State pattern is not very difficult once you have the hang of it.
 
-# Apply the Dependency Inversion Principle (DIP)
+# Lab 02
+
+## Apply the Dependency Inversion Principle (DIP)
 
 In this lab, you are going to use the Dependency Inversion Principle (DIP) to refactor a simple application that interacts with an external system through a `Gateway`.
 
@@ -636,7 +640,7 @@ Shipping parcel 4.535920kg to via Alternative Courier PRIORITY_OVERNIGHT option
 ```
 The lab task is to refactor the `OrderWithoutDip` class into a new class called OrderWithDip making use of the Dependency Inversion Principle. You will need to identify the external dependencies and apply the Dependency Inversion Principle (DIP) to decouple the Order class from the concrete Gateway implementations.
 
-## Hints and Tips
+### Hints and Tips
 In the `OrderWithoutDip` class, the Order class is a higher level module that depends on lower-level modules (the Gateway implementations). The `ship` method is higher in the call stack than the calls to the Gateway methods. In the language of Dependency Inversion, the Order is the Policy, and the Gateway implementations are the Details.
 The package containing OrderWithDip also depends on the two Gateway packages (defaultcourier and alternativecourier).
 
@@ -689,6 +693,6 @@ In other words, everything depends on the abstract interface (the abstraction). 
 - High-level modules should not depend on low-level modules. Instead, they should depend on abstractions.
 - Abstractions should not depend on details. Details should depend on abstractions.
 
-## Compare the application of the Dependency Inversion Principle (DIP) to the Strategy pattern. (Advanced)
+### Compare the application of the Dependency Inversion Principle (DIP) to the Strategy pattern. (Advanced)
 
 Consider how the application of the Dependency Inversion Principle (DIP) in this lab compares to the Strategy pattern you implemented earlier in the module.

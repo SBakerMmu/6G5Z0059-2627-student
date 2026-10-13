@@ -1,13 +1,14 @@
 ﻿# Software Design and Architecture Week09 Lab Worksheet
 
-# Convert a Ports and Adapters architecture to Spring
+# Lab 01
+## Convert a Ports and Adapters architecture to Spring
 
 This lab will set up a basic Spring Boot application that uses Dependency Injection to manage a Ports and Adapters architecture.
 
 > ⚠ This lab assumes you have completed the Spring Framework and Dependency Injection (DI) lab in a Week08 and are familiar with creating and running Spring Boot applications in IntelliJ.
 > If you have not done so, please complete that lab first.
 
-## Set up a Spring Boot Application
+### Set up a Spring Boot Application
 
 We are going to create a simple Spring Boot application using the **Spring Initializr** web tool.
 
@@ -148,7 +149,9 @@ Ensure your solution correctly places application code and infrastructure into t
 - Create a dummy implementation of the `Provided` interface, configure the Spring Boot application to use this dummy implementation. Demonstrate that the application still works.
 - Create an alternate implementation of the `Required` interface, configure the Spring Boot application to use this dummy implementation. Demonstrate that the application still works.
 
-# Add an administration function to the Shipping Cost Calculator Application using a Repository
+# Lab 02
+
+## Add an administration function to the Shipping Cost Calculator Application using a Repository
 
 > ⚠ This lab assumes you have completed the first part of this lab
 
@@ -217,7 +220,7 @@ If you write two separate Adapter classes to implement these two required interf
 
 **Question**: What lifetime scope should this data storage have?
 
-# Convert the OrderWithDIP lab to a Ports and Adapters architecture
+## Convert the OrderWithDIP lab to a Ports and Adapters architecture
 
 In a previous week the lab task was to refactor an Order that did not make use of the **DIP** (dependency inversion principle) to use the DIP to abstract the dependency on a default or alternative courier service.
 
@@ -259,7 +262,7 @@ lab0902.uk.ac.mmu.sda.sda.Lab0902Application     : No active profile set, fallin
 lab0902.uk.ac.mmu.sda.sda.Lab0902Application     : Started Lab0902Application in 0.519 seconds (process running for 0.769)
 ```
 
-## Hints and Tips
+### Hints and Tips
 
 As before, add a class that implements the `org.springframework.boot.CommandLineRunner` and `org.springframework.core.Ordered` interfaces. This will be the driving adapter for the application.
 
@@ -273,7 +276,7 @@ and then change the property value to a different string ("alt") to change couri
 
 Ensure your solution correctly places application code and infrastructure into the correct packages.
 
-## Using Spring Shell (Advanced)
+### Using Spring Shell (Advanced)
 
 This is very optional. In our examples so far, we have used the CommandLineRunner interface to run code when the application starts and this is fine for our examples and for supporting the assessment code.
 
